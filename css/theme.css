@@ -1,0 +1,12 @@
+body {
+  --background-color: #e4e4de;
+  --text-color: #222;
+  --link-color: #228176;
+  --header-text-color: #383636;
+  --tag-color: #262626;
+  --spacer-background: hsl(197, 37%, 97%);
+  --blockquote-background: hsla(197, 37%, 97%, 0.75);
+  --tree-marker-color: hsla(0, 0%, 0%, 0.2);
+  --grey-mid: #66605f;
+  --grey-light: hsla(13, 16%, 89%, 0.5);
+}
