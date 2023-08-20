@@ -1,3 +1,58 @@
 body {
   background: var(--background-color);
 }
+
+nav {
+  width: 100vw;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo-holder {
+  width: 50px;
+}
+
+.circle-holder {
+  flex: 1;
+  position: relative;
+
+}
+
+.circle-holder hr {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  border: none;
+  background: black;
+  height: 2px;
+  width: 100%;
+}
+
+.circle-1,
+.circle-2,
+.circle-3 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: red;
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.circle-2 {
+  width: 35px;
+  height: 35px;
+  left: 50px;
+}
+
+.circle-3 {
+  width: 20px;
+  height: 20px;
+  left: 90px;
+}
