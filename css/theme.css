@@ -3,8 +3,14 @@ body {
   --text-color: #222;
   --link-color: #228176;
 
-  --accent-color: #931F1D
-    /* --header-text-color: #383636;
+  /* --accent-color: #931F1D; */
+  --accent-color: #72675A;
+  /* --accent-color-light: hsla(1, 67%, 35%, .3); */
+  --accent-color-light: hsla(32, 12%, 40%, .5);
+
+  --accent-color-2: #7F7EFF;
+  --accent-color-2-light: hsla(240, 100%, 75%, 0.5);
+  /* --header-text-color: #383636;
   --tag-color: #262626;
   --spacer-background: hsl(197, 37%, 97%);
   --blockquote-background: hsla(197, 37%, 97%, 0.75);

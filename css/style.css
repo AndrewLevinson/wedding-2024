@@ -1,13 +1,22 @@
+@font-face {
+  font-family: 'Kepler';
+  src: url('/public/fonts/font.otf');
+  font-display: swap;
+}
+
 body {
   background: var(--background-color);
 }
 
 nav {
   width: 100vw;
-  padding: 20px;
+  padding: 10px 5vw;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 50px;
+  /* max-width: 1280px; */
+  margin: 15px auto;
+  position: fixed;
 }
 
 .logo-holder {
@@ -24,11 +33,11 @@ nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 0;
+  left: 35px;
   border: none;
-  background: black;
-  height: 2px;
-  width: 100%;
+  background: #937B63;
+  height: 1px;
+  width: calc(100% - 35px);
 }
 
 .circle-1,
@@ -37,7 +46,7 @@ nav {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: red;
+  background: radial-gradient(70.71% 70.71% at 50.00% 50%, #937B63 0%, rgba(147, 123, 99, 0.00) 100%);
   opacity: 0.5;
   position: absolute;
   top: 50%;
@@ -46,13 +55,65 @@ nav {
 }
 
 .circle-2 {
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
   left: 50px;
 }
 
 .circle-3 {
-  width: 20px;
-  height: 20px;
-  left: 90px;
+  width: 15px;
+  height: 15px;
+  left: 75px;
+}
+
+.big-photo {
+  display: block;
+  height: 100vh;
+  width: 45vw;
+  object-fit: cover;
+  object-position: center;
+  mix-blend-mode: multiply;
+  /* box-shadow: -20px 20px var(--accent-color-light); */
+}
+
+.container {
+  width: 100%;
+  /* max-width: 1280px; */
+  /* padding: 0 20px; */
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+
+h1 {
+  font-family: "Kepler", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 90px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  color: var(--text-color);
+  text-shadow: 1px 1px var(--accent-color-light);
+}
+
+
+@media(max-width:768px) {
+  .container {
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+  }
+
+  .big-photo {
+    height: auto;
+    width: 100%;
+  }
+
+  h1 {
+    padding: 0 20px;
+    font-size: 60px;
+  }
 }
