@@ -1,0 +1,57 @@
+nav {
+    width: 100vw;
+    padding: 10px 5vw;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    /* max-width: 1280px; */
+    margin: 15px auto;
+    position: fixed;
+}
+
+.logo-holder {
+    width: 50px;
+}
+
+.circle-holder {
+    flex: 1;
+    position: relative;
+
+}
+
+.circle-holder hr {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 35px;
+    border: none;
+    background: #937B63;
+    height: 1px;
+    width: calc(100% - 35px);
+}
+
+.circle-1,
+.circle-2,
+.circle-3 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(70.71% 70.71% at 50.00% 50%, #937B63 0%, rgba(147, 123, 99, 0.00) 100%);
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.circle-2 {
+    width: 25px;
+    height: 25px;
+    left: 50px;
+}
+
+.circle-3 {
+    width: 15px;
+    height: 15px;
+    left: 75px;
+}
