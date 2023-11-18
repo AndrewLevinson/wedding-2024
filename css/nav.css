@@ -7,6 +7,7 @@ nav {
     /* max-width: 1280px; */
     margin: 15px auto;
     position: fixed;
+    z-index: 2;
 }
 
 .logo-holder {
