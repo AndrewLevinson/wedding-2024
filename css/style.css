@@ -1,5 +1,6 @@
 body {
   background: var(--background-color);
+  overflow-x: hidden;
 }
 
 .big-photo {
@@ -36,6 +37,7 @@ body {
     flex-direction: column;
     align-items: start;
     gap: 30px;
+    margin-bottom: 50px;
   }
 
   .big-photo {
@@ -51,7 +53,7 @@ body {
 
 @media(max-width: 550px) {
   .big-photo {
-    height: 65vh;
+    height: 100vw;
     width: 100%;
   }
 }
