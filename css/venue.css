@@ -6,9 +6,17 @@
 .date {
   font-size: 20px;
   display: block;
-  margin-bottom: 3px;
+  margin-bottom: 8px;
 }
 
 address {
   margin-bottom: 1em;
+}
+
+.note {
+  margin-top: 100px;
+}
+
+.note p {
+  margin-bottom: 5px;
 }

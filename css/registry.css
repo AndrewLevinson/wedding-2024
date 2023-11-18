@@ -1,4 +1,13 @@
 .registry {
-  padding-top: 175px;
+  padding-top: 125px;
   mix-blend-mode: multiply;
+}
+
+.note {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.note p {
+  margin-bottom: 5px;
 }

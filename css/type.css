@@ -16,7 +16,7 @@ body {
         'Open Sans',
         'Helvetica Neue',
         sans-serif;
-    font-size: 17px;
+    font-size: 18px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: var(--sans-stack);
@@ -30,9 +30,10 @@ h1 {
     font-size: 90px;
     text-transform: uppercase;
     letter-spacing: -0.5px;
-    line-height: 1;
+    line-height: 0.85;
     color: var(--text-color);
     text-shadow: 1px 1px var(--accent-color-light);
+    margin-bottom: 0.1em;
 }
 
 h2 {
@@ -46,6 +47,16 @@ h2 {
 p {
     margin: 0;
     margin-bottom: 1em;
+}
+
+a {
+    font-family: inherit;
+    color: var(--link-color);
+    font-weight: inherit;
+}
+
+a:focus {
+    outline: 1px dotted var(--link-color);
 }
 
 
