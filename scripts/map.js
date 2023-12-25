@@ -11,7 +11,7 @@ map.on('load', function () {
   const tooltip = document.querySelector('.tooltip');
   map.on('mousemove', 'our-nyc', e => {
     const props = e.features[0].properties;
-    const { Name: name, Description: description } = props;
+    const { name, description } = props;
     tooltip.style.opacity = 1;
     tooltip.innerHTML = `<div class="name">${name}</div> <div class="description">${description}</div>`;
     tooltip.style.top = `${e.point.y + 30}px`;
