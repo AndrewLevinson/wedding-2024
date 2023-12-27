@@ -1,0 +1,46 @@
+.split-screen-contain {
+    display: flex;
+}
+
+.split-screen-contain>div {
+    position: relative;
+}
+
+.split-screen-contain img {
+    width: 50vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.split-screen-contain h2 {
+    position: absolute;
+    color: #fff;
+    opacity: 0.75;
+    text-transform: uppercase;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+
+.split-screen-contain>div:hover {
+    opacity: 0.95;
+}
+
+
+
+.split-screen-contain>div:hover h2 {
+    color: var(--accent-color);
+}
+
+nav a {
+    color: #fff;
+    text-decoration-color: #fff;
+}
+
+nav li a.active {
+    text-decoration-color: #fff;
+
+}
