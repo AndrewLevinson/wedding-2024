@@ -4,31 +4,26 @@ nav {
     display: flex;
     justify-content: space-between;
     gap: 50px;
-    /* max-width: 1280px; */
     margin: 15px auto;
     position: fixed;
     z-index: 2;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: baseline;
 }
 
 .logo-holder {
     width: 50px;
 }
 
+
 .circle-holder {
-    flex: 1;
-    position: relative;
-
-}
-
-.circle-holder hr {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 35px;
-    border: none;
-    background: #937B63;
-    height: 1px;
-    width: calc(100% - 35px);
+    top: 30px;
 }
 
 .circle-1,
@@ -55,4 +50,29 @@ nav {
     width: 15px;
     height: 15px;
     left: 75px;
+}
+
+nav ul {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    justify-content: flex-end;
+    border-top: 1px solid #937B63;
+    align-self: center;
+    padding-top: 10px;
+    gap: 15px;
+}
+
+nav li {
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+nav a {
+    text-decoration-color: transparent;
+}
+
+nav li a.active {
+    text-decoration-color: var(--link-color);
+    font-weight: 600;
 }
