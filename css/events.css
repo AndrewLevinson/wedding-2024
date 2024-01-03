@@ -25,6 +25,10 @@
     font-size: 40px;
 }
 
+.split-screen-contain span {
+    font-size: 22px;
+}
+
 .split-screen-contain>div:hover {
     opacity: 0.95;
 }
@@ -43,4 +47,22 @@ nav a {
 nav li a.active {
     text-decoration-color: #fff;
 
+}
+
+@media(max-width:1050px) {
+    .split-screen-contain span {
+        font-size: 24px;
+        display: block;
+        margin-top: -5px;
+    }
+}
+
+@media(max-width:550px) {
+    .split-screen-contain h2 {
+        font-size: 28px;
+    }
+
+    .split-screen-contain span {
+        font-size: 20px;
+    }
 }

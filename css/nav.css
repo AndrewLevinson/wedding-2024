@@ -5,7 +5,7 @@ nav {
     justify-content: space-between;
     gap: 50px;
     margin: 15px auto;
-    position: fixed;
+    position: absolute;
     z-index: 2;
 }
 
@@ -75,4 +75,44 @@ nav a {
 nav li a.active {
     text-decoration-color: var(--link-color);
     font-weight: 600;
+}
+
+@media(max-width:550px) {
+    .logo-holder {
+        width: 35px;
+    }
+
+    .circle-holder {
+        top: 16px
+    }
+
+    .circle-1 {
+        width: 25px;
+        height: 25px;
+    }
+
+    .circle-2 {
+        width: 17px;
+        height: 17px;
+        left: 22px;
+    }
+
+    .circle-3 {
+        width: 10px;
+        height: 10px;
+        left: 40px;
+    }
+
+    nav {
+        gap: 25px;
+        margin: 10px auto;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav li {
+        font-size: 14px;
+    }
 }
