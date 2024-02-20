@@ -8,26 +8,49 @@ const map = new mapboxgl.Map({
   projection: 'mercator',
 });
 
-map.on('load', 'our-nyc', function (e) {
+map.on('load', 'our-nyc', ourLayer => {
   const tooltip = document.querySelector('.tooltip');
   const bounds = new mapboxgl.LngLatBounds();
-  const $list = document.querySelector('.list');
-  e.features.forEach(feature => {
+  const $empyList = document.querySelector('.list');
+  const features = ourLayer.features;
+
+  features.forEach(feature => {
     const { name } = feature.properties;
-    $list.innerHTML += `<li>${name}</li>`;
+    $empyList.innerHTML += `<li data-id="${feature.id}">${name}</li>`;
     bounds.extend(feature.geometry.coordinates);
   });
-  map.fitBounds(bounds, { padding: 100 });
+  map.fitBounds(bounds, { padding: 75 });
 
-  map.on('mousemove', 'our-nyc', e => {
-    const props = e.features[0].properties;
+  const handleMouseMove = (e, foundFeature) => {
+    const props = e ? e.features[0].properties : foundFeature.properties;
     const { name, description, vibe } = props;
+
     tooltip.style.opacity = 1;
     tooltip.innerHTML = `<div class="name">${name}</div> <div class="description">${description}</div><div class="vibe">${vibe}</div>`;
-    tooltip.style.top = `${e.point.y + 30}px`;
-    tooltip.style.left = `${e.point.x - 112}px`;
+    tooltip.style.top = `${e ? e.point.y + 30 : foundFeature._y}px`;
+    tooltip.style.left = `${e ? e.point.x - 112 : foundFeature._x}px`;
+  };
+
+  const handleMouseOut = () => (tooltip.style.opacity = 0);
+
+  map.on('mousemove', 'our-nyc', e => {
+    handleMouseMove(e);
   });
-  map.on('mouseout', 'our-nyc', e => {
-    tooltip.style.opacity = 0;
+
+  map.on('mouseout', 'our-nyc', () => {
+    handleMouseOut();
+  });
+
+  const $finishedList = document.querySelectorAll('.list li');
+  $finishedList.forEach(el => {
+    el.addEventListener('mouseover', e => {
+      const dataID = e.target.dataset.id;
+      handleMouseMove(
+        null,
+        features.find(feature => feature.id == dataID)
+      );
+    });
+
+    el.addEventListener('mouseout', handleMouseOut);
   });
 });
