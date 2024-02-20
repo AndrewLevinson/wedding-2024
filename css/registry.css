@@ -11,3 +11,8 @@
 .note p {
   margin-bottom: 5px;
 }
+
+h1 {
+  text-align: center;
+  display: none;
+}
