@@ -33,6 +33,29 @@ html {
   margin-bottom: 3em;
 }
 
+.button-group {
+  display: flex;
+  gap: 15px;
+}
+
+.button-group a {
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  background: var(--link-color);
+  border: 1px solid var(--link-color);
+  text-decoration: none;
+  color: white;
+}
+
+.button-group a:hover,
+.button-group a:focus {
+  background: var(--background-color);
+  color: var(--link-color);
+}
+
+
 
 @media(max-width:768px) {
   .container {
