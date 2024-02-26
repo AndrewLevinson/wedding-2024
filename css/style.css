@@ -1,4 +1,5 @@
-body {
+body,
+html {
   background: var(--background-color);
   overflow-x: hidden;
 }
