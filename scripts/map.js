@@ -8,18 +8,21 @@ const map = new mapboxgl.Map({
   projection: 'mercator',
 });
 
+const scroller = scrollama();
+
 map.on('load', 'our-nyc', ourLayer => {
+  map.scrollZoom.disable();
   const tooltip = document.querySelector('.tooltip');
   const bounds = new mapboxgl.LngLatBounds();
   const $empyList = document.querySelector('.list');
   const features = ourLayer.features;
-
+  $empyList.innerHTML = '';
   features.forEach(feature => {
     const { name } = feature.properties;
     $empyList.innerHTML += `<li data-id="${feature.id}">${name}</li>`;
     bounds.extend(feature.geometry.coordinates);
   });
-  map.fitBounds(bounds, { padding: 75 });
+  // map.fitBounds(bounds, { padding: 75 });
 
   const handleMouseMove = (e, foundFeature) => {
     const props = e ? e.features[0].properties : foundFeature.properties;
@@ -53,4 +56,76 @@ map.on('load', 'our-nyc', ourLayer => {
 
     el.addEventListener('mouseout', handleMouseOut);
   });
+
+  // add scroll steps here
+  scroller
+    .setup({
+      step: '.step',
+    })
+    .onStepEnter(response => {
+      const { element, index, direction } = response;
+
+      const city = element.dataset?.city;
+
+      switch (city) {
+        case 'oakville':
+          map.flyTo({
+            center: [-79.6877, 43.4675],
+            zoom: 9,
+          });
+          break;
+
+        case 'queens':
+          map.flyTo({
+            center: [-73.7692, 40.7603],
+            zoom: 9,
+          });
+          break;
+
+        case 'bg':
+          map.flyTo({
+            center: [-87.9631, 42.1663],
+            zoom: 9,
+          });
+          break;
+        case 'chicago':
+          map.flyTo({
+            center: [-87.6488, 41.9255],
+            zoom: 9,
+          });
+          break;
+
+        case 'brooklyn':
+          map.flyTo({
+            center: [-73.9571, 40.7081],
+            zoom: 9,
+          });
+          break;
+        case 'toronto':
+          map.flyTo({
+            center: [-79.3832, 43.6532],
+            zoom: 9,
+          });
+          break;
+
+        case 'vancouver':
+          map.flyTo({
+            center: [-123.1207, 49.2827],
+            zoom: 9,
+          });
+          break;
+
+        default:
+          break;
+      }
+
+      if (element.dataset.step == 'list' && direction == 'down') {
+        map.fitBounds(bounds, { padding: 75 });
+      }
+    })
+    .onStepExit(response => {
+      const { element, index, direction } = response;
+      // console.log(element, index, direction);
+      // { element, index, direction }
+    });
 });
