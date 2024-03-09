@@ -24,7 +24,7 @@ html {
 }
 
 .content {
-  margin-top: 30vh;
+  margin-top: 25vh;
   padding: 0 20px;
   max-width: 600px;
 }
@@ -33,6 +33,17 @@ html {
   margin-bottom: 3em;
 }
 
+.sketch {
+  max-width: 200px;
+  margin-bottom: 5px;
+}
+
+
+@media(max-width:1024px) {
+  .sketch {
+    max-width: 160px;
+  }
+}
 
 @media(max-width:768px) {
   .container {
@@ -59,4 +70,6 @@ html {
     height: 100vw;
     width: 100%;
   }
+
+
 }
