@@ -2,31 +2,37 @@
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    width: 100vw;
-    gap: 40vh;
-    max-width: 400px;
+    /* width: 100vw; */
+    gap: 60vh;
+    /* max-width: 400px; */
     margin: 0 auto 100px 5vw;
     position: relative;
     z-index: 2;
+    pointer-events: none;
 }
 
 .step {
     background: var(--background-color);
-    border-radius: 10px;
-    box-shadow: 20px 20px var(--accent-color-2);
+    width: 300px;
+    max-width: 100%;
 }
 
 
 .step img {
     width: 100%;
-    /* max-height: 350px;
+    padding: 20px 20px 0 20px;
+    max-height: 300px;
     object-fit: cover;
-    object-position: top center; */
+    object-position: center;
 }
 
 .step p {
     margin: 0;
-    padding: 20px 30px;
+    padding: 10px 15px;
+    font-size: 17px;
+    line-height: 1.25;
+    font-weight: 400;
+    font-family: inherit;
 }
 
 
@@ -45,27 +51,25 @@
     left: 0;
 }
 
-@media(max-width:768px) {
-    .mapboxgl-map.map-holder {
-        height: 100vw;
-        width: 100%;
-        max-height: 80vh;
-    }
-}
 
-@media(max-width: 550px) {
+
+/* @media(max-width: 550px) {
     .mapboxgl-map.map-holder {
         height: 100vw;
         width: 100%;
     }
-}
+} */
 
-.note {
-    margin-top: 100px;
-}
 
-.note p {
-    margin-bottom: 5px;
+
+.map-note {
+    background: var(--background-color);
+    z-index: 3;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20vh;
+    width: fit-content;
+    left: 10%;
 }
 
 .tooltip {
@@ -101,7 +105,60 @@
     line-height: 1.1;
 }
 
+
+div[data-step="list"] {
+    margin-bottom: 100vh;
+
+}
+
+div[data-step="list"] h3 {
+    padding: 10px 15px 0 15px;
+    margin-bottom: 0;
+}
+
 .list {
     margin: 0;
-    /* text-align: right; */
+}
+
+
+.img-popup {
+    opacity: 1;
+    position: fixed;
+    background-color: var(--background-color);
+    border-radius: 2px;
+    z-index: 2;
+    pointer-events: none;
+    padding: 5px 10px;
+    transition: 0.15s ease-in-out opacity;
+}
+
+@media(max-width:768px) {
+    .mapboxgl-map.map-holder {
+        height: 100vh;
+        width: 100%;
+        /* max-height: 80vh; */
+    }
+
+    .about-intro {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 60vh;
+        max-width: 350px;
+        margin: 20vh auto 100px auto;
+        position: relative;
+        z-index: 2;
+        padding: 0 10px;
+        pointer-events: initial;
+    }
+
+    .step {
+        max-width: none;
+        width: 100%;
+    }
+
+    .map-note {
+
+        left: initial
+    }
 }

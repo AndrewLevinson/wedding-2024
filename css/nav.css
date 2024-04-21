@@ -83,10 +83,11 @@ nav li a.active {
     }
 
     .circle-holder {
-        top: 16px
+        /* top: 16px */
+        display: none;
     }
 
-    .circle-1 {
+    /* .circle-1 {
         width: 25px;
         height: 25px;
     }
@@ -101,15 +102,17 @@ nav li a.active {
         width: 10px;
         height: 10px;
         left: 40px;
-    }
+    } */
 
     nav {
         gap: 25px;
         margin: 10px auto;
+        padding: 0 10px;
     }
 
     nav ul {
         gap: 10px;
+        margin-left: 0;
     }
 
     nav li {
