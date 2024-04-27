@@ -83,26 +83,9 @@ nav li a.active {
     }
 
     .circle-holder {
-        /* top: 16px */
         display: none;
     }
 
-    /* .circle-1 {
-        width: 25px;
-        height: 25px;
-    }
-
-    .circle-2 {
-        width: 17px;
-        height: 17px;
-        left: 22px;
-    }
-
-    .circle-3 {
-        width: 10px;
-        height: 10px;
-        left: 40px;
-    } */
 
     nav {
         gap: 25px;

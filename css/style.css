@@ -11,6 +11,7 @@ html {
   object-fit: cover;
   object-position: center;
   mix-blend-mode: multiply;
+  /* position: fixed; */
 }
 
 .container {

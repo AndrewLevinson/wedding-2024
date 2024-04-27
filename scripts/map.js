@@ -18,21 +18,16 @@ const map = new mapboxgl.Map({
   zoom: 10, // starting zoom
   style: 'mapbox://styles/andrewlevinson/clqk3wbgr00fg01pi41z66p8y',
   projection: 'mercator',
-  interactive: false,
 });
 
 const scroller = scrollama();
 
 map.on('load', 'our-nyc', ourLayer => {
-  // map.scrollZoom.disable();
+  map.scrollZoom.disable();
   const tooltip = document.querySelector('.tooltip');
   const bounds = new mapboxgl.LngLatBounds();
 
   const features = ourLayer.features;
-  console.log('loaded');
-  // const $empyList = document.querySelector('.list');
-
-  // map.fitBounds(bounds, { padding: 75 });
 
   const handleMouseMove = (e, foundFeature) => {
     const props = e ? e.features[0].properties : foundFeature.properties;
@@ -63,37 +58,21 @@ map.on('load', 'our-nyc', ourLayer => {
       const { element, index, direction } = response;
       const city = element.dataset?.city;
 
-      map
-        .flyTo({
-          center: locationData[city],
-          zoom: 9,
-          speed: 1.5,
-        })
-        .on('moveend', () => {
-          console.log('running');
-        });
-      // setImgPopup(locationData[city], fileName);
-      if (element.dataset.step == 'list' && direction == 'down') {
-        // $empyList.innerHTML = '';
+      map.flyTo({
+        center: locationData[city],
+        zoom: 9,
+        speed: 1.5,
+      });
+      if (element.dataset.step == 'list') {
         features.forEach(feature => {
-          // const { name } = feature.properties;
-          // $empyList.innerHTML += `<li data-id="${feature.id}">${name}</li>`;
           bounds.extend(feature.geometry.coordinates);
         });
-        map.fitBounds(bounds, { padding: 25 });
-
-        // const $finishedList = document.querySelectorAll('.list li');
-        // $finishedList.forEach(el => {
-        //   el.addEventListener('mouseover', e => {
-        //     const dataID = e.target.dataset.id;
-        //     handleMouseMove(
-        //       null,
-        //       features.find(feature => feature.id == dataID)
-        //     );
-        //   });
-
-        //   el.addEventListener('mouseout', handleMouseOut);
-        // });
+        if (window.innerWidth < 600) {
+          map.fitBounds(bounds, { padding: 50 });
+          map.scrollZoom.disable();
+        } else {
+          map.fitBounds(bounds, { padding: 150 });
+        }
       }
     })
     .onStepExit(response => {

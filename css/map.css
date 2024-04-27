@@ -121,16 +121,6 @@ div[data-step="list"] h3 {
 }
 
 
-.img-popup {
-    opacity: 1;
-    position: fixed;
-    background-color: var(--background-color);
-    border-radius: 2px;
-    z-index: 2;
-    pointer-events: none;
-    padding: 5px 10px;
-    transition: 0.15s ease-in-out opacity;
-}
 
 @media(max-width:768px) {
     .mapboxgl-map.map-holder {
@@ -143,7 +133,7 @@ div[data-step="list"] h3 {
         display: grid;
         grid-template-columns: 1fr;
         width: 100%;
-        gap: 60vh;
+        gap: 80vh;
         max-width: 350px;
         margin: 20vh auto 100px auto;
         position: relative;
