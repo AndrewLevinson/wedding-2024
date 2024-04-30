@@ -11,6 +11,7 @@ html {
   object-fit: cover;
   object-position: center;
   mix-blend-mode: multiply;
+  /* position: fixed; */
 }
 
 .container {
@@ -24,7 +25,7 @@ html {
 }
 
 .content {
-  margin-top: 25vh;
+  margin-top: 130px;
   padding: 0 20px;
   max-width: 600px;
 }
@@ -50,7 +51,7 @@ html {
     flex-direction: column;
     align-items: start;
     gap: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
   }
 
   .big-photo {
