@@ -10,7 +10,7 @@
 }
 
 address {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 .note {
@@ -19,4 +19,13 @@ address {
 
 .note p {
   margin-bottom: 5px;
+}
+
+@media(max-width: 550px) {
+  .big-photo {
+    height: 60vw;
+    width: 100%;
+  }
+
+
 }

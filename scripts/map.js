@@ -15,7 +15,7 @@ const map = new mapboxgl.Map({
   container: 'map', // container ID
   center: [-73.975, 40.725], // starting position [lng, lat]
   // center: [-73.7692, 40.7603],
-  zoom: 10, // starting zoom
+  zoom: 12, // starting zoom
   style: 'mapbox://styles/andrewlevinson/clqk3wbgr00fg01pi41z66p8y',
   projection: 'mercator',
 });
@@ -28,6 +28,7 @@ map.on('load', 'our-nyc', ourLayer => {
   const bounds = new mapboxgl.LngLatBounds();
 
   const features = ourLayer.features;
+  map.setLayoutProperty('our-nyc', 'visibility', 'none');
 
   const handleMouseMove = (e, foundFeature) => {
     const props = e ? e.features[0].properties : foundFeature.properties;
@@ -64,11 +65,13 @@ map.on('load', 'our-nyc', ourLayer => {
         speed: 1.5,
       });
       if (element.dataset.step == 'list') {
+        map.setLayoutProperty('our-nyc', 'visibility', 'visible');
+
         features.forEach(feature => {
           bounds.extend(feature.geometry.coordinates);
         });
         if (window.innerWidth < 600) {
-          map.fitBounds(bounds, { padding: 50 });
+          map.fitBounds(bounds, { padding: 0 });
           map.scrollZoom.disable();
         } else {
           map.fitBounds(bounds, { padding: 150 });
