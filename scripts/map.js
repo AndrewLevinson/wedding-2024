@@ -71,10 +71,10 @@ map.on('load', 'our-nyc', ourLayer => {
         features.forEach(feature => {
           bounds.extend(feature.geometry.coordinates);
         });
-        map.dragPan.enable();
         if (window.innerWidth < 600) {
           map.fitBounds(bounds, { padding: 0 });
           map.scrollZoom.disable();
+          map.dragPan.enable();
         } else {
           map.fitBounds(bounds, { padding: 150 });
         }
