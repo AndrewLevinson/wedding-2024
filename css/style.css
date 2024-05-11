@@ -67,6 +67,10 @@ html {
   .sketch {
     max-width: 160px;
   }
+
+  .container {
+    gap: 10px;
+  }
 }
 
 @media(max-width:768px) {
