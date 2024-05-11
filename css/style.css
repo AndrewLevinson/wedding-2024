@@ -94,6 +94,21 @@ html {
     height: 100vw;
     width: 100%;
   }
+}
 
 
+@media (min-width: 769px) and (orientation:portrait) {
+  .big-photo {
+    height: auto;
+    width: 40vw;
+  }
+
+  .container {
+    padding: 130px 50px;
+    gap: 20px;
+  }
+
+  .content {
+    margin-top: 20px;
+  }
 }
