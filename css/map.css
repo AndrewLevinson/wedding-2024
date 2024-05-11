@@ -126,7 +126,7 @@ div[data-step="list"] h3 {
 }
 
 
-@media(max-width:768px) {
+@media(max-width:767px) {
     .content {
         margin: 0 auto;
     }
